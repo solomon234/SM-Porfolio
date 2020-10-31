@@ -69,6 +69,8 @@ class Aboutme extends Component {
               <ProgressBar progress={100}  />              
               <h3>React JS</h3>
               <ProgressBar progress={60} buffer={40} />
+              <h3>Angular JS</h3>
+              <ProgressBar progress={80} buffer={20} />
             </div>
           </div>
           </Card>           
