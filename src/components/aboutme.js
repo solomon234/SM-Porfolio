@@ -21,7 +21,7 @@ class Aboutme extends Component {
       <>
       <Grid>
         <Cell col={6}>
-          <Card shadow={1} className={"cardStyle"} style={{width: '512px',height:'80vh',margin:'auto'}} >
+          <Card shadow={1} className={"cardStyle"} style={{width: '512px',height:'85vh',margin:'auto'}} >
             <CardTitle style={{height:'150px'}}>
               <h4 className={"headerTitleTop"}>My Name is:</h4>
               <h2 className={"headerTitleMid"}>Solomon Muratov,</h2>
@@ -38,13 +38,13 @@ class Aboutme extends Component {
               </p>
               <hr style={{width:'85%',marginLeft:'auto',marginRight:'auto'}} />
               <p style={{fontSize:'2rem',lineHeight:'1.5'}}>
-                  My current interests are learning React to develop web applications and mobile applications.
+                  While I maintain a variety of interests, most of my days i spend developing React JS, Angular, and C# Applications.
               </p>
             </CardText>
           </Card>           
         </Cell>
         <Cell col={6}>
-        <Card shadow={1} className={"cardStyle"} style={{width: '90%',height:'80vh'}} >
+        <Card shadow={1} className={"cardStyle"} style={{width: '90%',height:'85vh'}} >
           <div style={{width:'85%',marginLeft:'auto',marginRight:'auto'}} > 
             <CardTitle style={{height:'100px'}}>
               <h4 className={"headerTitleMid"}>Who is <strong>Solomon Muratov</strong></h4>
