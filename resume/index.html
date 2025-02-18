@@ -1,164 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solomon Muratov - Resume</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+    <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+</head>
 <style>
     :root {
-    --primary-color: #2563eb;
-    --text-color: #1f2937;
-    --bg-color: #f3f4f6;
-}
+        --primary-color: #2563eb;
+        --text-color: #1f2937;
+        --bg-color: #f3f4f6;
+    }
 
     * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
     body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background: var(--bg-color);
-    padding: 2rem 1rem;
-}
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background: var(--bg-color);
+        padding: 2rem 1rem;
+    }
 
     .container {
-    max-width: 900px;
-    margin: 0 auto;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    overflow: hidden;
-}
+        max-width: 900px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
 
     header {
-    background: var(--primary-color);
-    color: white;
-    padding: 2rem;
-}
+        background: var(--primary-color);
+        color: white;
+        padding: 2rem;
+        position: relative;
+    }
+
+    .download-btn {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        background: transparent;
+        border: 2px solid white;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.2s ease;
+    }
+
+    .download-btn:hover {
+        background: white;
+        color: var(--primary-color);
+    }
 
     .name {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-}
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
 
     .title {
-    font-size: 1.25rem;
-    margin-bottom: 1.5rem;
-}
+        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+    }
 
     .contact-info {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    font-size: 0.9rem;
-}
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
 
     .contact-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
 
     .contact-item a {
-    color: white;
-    text-decoration: none;
-}
+        color: white;
+        text-decoration: none;
+    }
 
     .contact-item a:hover {
-    text-decoration: underline;
-}
+        text-decoration: underline;
+    }
 
     main {
-    padding: 2rem;
-}
+        padding: 2rem;
+    }
 
     section {
-    margin-bottom: 2rem;
-}
+        margin-bottom: 2rem;
+    }
 
     h2 {
-    color: var(--primary-color);
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid var(--primary-color);
-    padding-bottom: 0.5rem;
-}
+        color: var(--primary-color);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid var(--primary-color);
+        padding-bottom: 0.5rem;
+    }
 
     .skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
 
     .skill-tag {
-    background: #e5e7eb;
-    padding: 0.25rem 0.75rem;
-    border-radius: 15px;
-    font-size: 0.9rem;
-}
+        background: #e5e7eb;
+        padding: 0.25rem 0.75rem;
+        border-radius: 15px;
+        font-size: 0.9rem;
+    }
 
     .experience-item {
-    margin-bottom: 1.5rem;
-    padding-left: 1rem;
-    border-left: 3px solid var(--primary-color);
-}
+        margin-bottom: 1.5rem;
+        padding-left: 1rem;
+        border-left: 3px solid var(--primary-color);
+    }
 
     .experience-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0.5rem;
-}
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+    }
 
     .company {
-    font-weight: bold;
-    font-size: 1.1rem;
-}
+        font-weight: bold;
+        font-size: 1.1rem;
+    }
 
     .location {
-    font-style: italic;
-    color: #666;
-}
+        font-style: italic;
+        color: #666;
+    }
 
     .date {
-    color: #666;
-}
+        color: #666;
+    }
 
     .position {
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-}
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
 
     ul {
-    list-style-position: inside;
-    margin-left: 1rem;
-}
+        list-style-position: inside;
+        margin-left: 1rem;
+    }
 
     li {
-    margin-bottom: 0.5rem;
-}
+        margin-bottom: 0.5rem;
+    }
 
     .education-item, .award-item {
-    margin-bottom: 1rem;
-}
+        margin-bottom: 1rem;
+    }
 
     @media (max-width: 600px) {
-    .contact-info {
-    flex-direction: column;
-}
+        .contact-info {
+            flex-direction: column;
+        }
 
-    .experience-header {
-    flex-direction: column;
-}
+        .experience-header {
+            flex-direction: column;
+        }
 
-    body {
-    padding: 1rem 0.5rem;
-}
-}
+        body {
+            padding: 1rem 0.5rem;
+        }
+    }
 </style>
 </head>
 <body>
@@ -202,14 +227,25 @@
                 <a href="https://linkedin.com/in/solomonmuratov/">linkedin.com/in/solomonmuratov</a>
             </div>
         </div>
+        <button class="download-btn" onclick="CreatePDFfromHTML()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Download PDF
+        </button>
     </header>
 
     <main>
         <section>
             <h2>Professional Summary</h2>
-            <p>Skilled Software Development Manager with 7 years of experience in managing distributed systems, mentoring junior engineers, and
-                introducing new processes to improve department efficiency. Proficient in .NET 8 Core, Vue.js, Node.js, Python, and AWS, with expertise in
-                cloud technologies and IaC utilities. Strong background in computer programming, including C#, ASP.NET, and SQL.</p>
+            <p>Skilled Software Development Manager with 7 years of experience in managing distributed systems,
+                mentoring junior engineers, and
+                introducing new processes to improve department efficiency. Proficient in .NET 8 Core, Vue.js, Node.js,
+                Python, and AWS, with expertise in
+                cloud technologies and IaC utilities. Strong background in computer programming, including C#, ASP.NET,
+                and SQL.</p>
         </section>
 
         <section>
@@ -244,12 +280,25 @@
                 </div>
                 <div class="position">Software Development Manager</div>
                 <ul>
-                    <li>Advanced from Software Developer to Lead Developer and now Software Development Manager, leading development of BizLMS, a cloud-hosted SaaS product serving 300,000+ users</li>
-                    <li>Architected and maintained distributed systems using .NET 6 Core, C# REST API, Vue.js, frontend, and serverless applications with Node.js and Python Lambda functions</li>
-                    <li>Implemented and managed SOC2-compliant deployment processes while leveraging AWS services (Cloud Search, S3, Lambda, Redshift, SQS, API Gateway, Kendra, Personalize, Glue) and IaC utilities like SAM</li>
-                    <li>Established comprehensive employee development programs including standardized 1:1s, peer reviews, and mentorship initiatives for junior to senior-level engineers</li>
-                    <li>Improved departmental efficiency by introducing new processes for resource management, task prioritization, and risk mitigation</li>
-                    <li>Built strong stakeholder relationships to align development efforts with business objectives and deliver complex projects under tight deadlines</li>
+                    <li>Advanced from Software Developer to Lead Developer and now Software Development Manager, leading
+                        development of BizLMS, a cloud-hosted SaaS product serving 300,000+ users
+                    </li>
+                    <li>Architected and maintained distributed systems using .NET 6 Core, C# REST API, Vue.js, frontend,
+                        and serverless applications with Node.js and Python Lambda functions
+                    </li>
+                    <li>Implemented and managed SOC2-compliant deployment processes while leveraging AWS services (Cloud
+                        Search, S3, Lambda, Redshift, SQS, API Gateway, Kendra, Personalize, Glue) and IaC utilities
+                        like SAM
+                    </li>
+                    <li>Established comprehensive employee development programs including standardized 1:1s, peer
+                        reviews, and mentorship initiatives for junior to senior-level engineers
+                    </li>
+                    <li>Improved departmental efficiency by introducing new processes for resource management, task
+                        prioritization, and risk mitigation
+                    </li>
+                    <li>Built strong stakeholder relationships to align development efforts with business objectives and
+                        deliver complex projects under tight deadlines
+                    </li>
                 </ul>
             </div>
             <div class="experience-item">
@@ -262,10 +311,14 @@
                 </div>
                 <div class="position">.NET Developer</div>
                 <ul>
-                    <li>Led development of internal business portal using ASP Web Forms and ASP.NET/AngularJS, while optimizing database performance and delivering executive-level reporting</li>
+                    <li>Led development of internal business portal using ASP Web Forms and ASP.NET/AngularJS, while
+                        optimizing database performance and delivering executive-level reporting
+                    </li>
                     <li>Architected scalable web applications, console applications, and automated SQL processes</li>
                     <li>Collaborated with cross-functional teams to gather requirements and implement solutions</li>
-                    <li>Created and maintained comprehensive financial reports and analytics for executive decision-making</li>
+                    <li>Created and maintained comprehensive financial reports and analytics for executive
+                        decision-making
+                    </li>
                 </ul>
             </div>
 
@@ -279,10 +332,15 @@
                 </div>
                 <div class="position">.NET Web Developer</div>
                 <ul>
-                    <li>Enhanced and maintained CRM system using C# ASP.NET MVC and AngularJS, focusing on bug resolution and process automation</li>
+                    <li>Enhanced and maintained CRM system using C# ASP.NET MVC and AngularJS, focusing on bug
+                        resolution and process automation
+                    </li>
                     <li>Implemented automated workflows to improve system efficiency and reliability</li>
                     <li>Developed SSRS financial reports to support data-driven decision making</li>
-                    <li>Led comprehensive performance optimization initiatives across web applications, SSRS financial reporting suite, month-end reconciliation processes, and SQL query execution, significantly reducing system-wide response times and improving user experience</li>
+                    <li>Led comprehensive performance optimization initiatives across web applications, SSRS financial
+                        reporting suite, month-end reconciliation processes, and SQL query execution, significantly
+                        reducing system-wide response times and improving user experience
+                    </li>
                 </ul>
             </div>
 
@@ -297,7 +355,9 @@
                 <div class="position">IT / Computer Programming</div>
                 <ul>
                     <li>Programming with BASIC on a legacy NoSQL DB and building reports in that same environment</li>
-                    <li>Working with IT Admin, assisting with tasks including setting up printers and assisting users using Active Directory</li>
+                    <li>Working with IT Admin, assisting with tasks including setting up printers and assisting users
+                        using Active Directory
+                    </li>
                 </ul>
             </div>
         </section>
@@ -334,4 +394,33 @@
     </main>
 </div>
 </body>
+<script>
+
+    function CreatePDFfromHTML() {
+        const container = document.getElementsByClassName('container')[0];
+        const dlBtn = document.getElementsByClassName('download-btn')[0];
+        dlBtn.style.display = 'none';
+        const HTML_Width = container.clientWidth;
+        const HTML_Height = container.clientHeight;
+        const top_left_margin = 15;
+        const PDF_Width = HTML_Width + (top_left_margin * 2);
+        const PDF_Height = (PDF_Width * 1.5) + (top_left_margin * 2);
+        const canvas_image_width = HTML_Width;
+        const canvas_image_height = HTML_Height;
+
+        const totalPDFPages = Math.ceil(HTML_Height / PDF_Height) - 1;
+
+        html2canvas(container).then(function (canvas) {
+            const imgData = canvas.toDataURL("image/jpeg", 1.0);
+            const pdf = new jsPDF('p', 'pt', [PDF_Width, PDF_Height]);
+            pdf.addImage(imgData, 'JPG', top_left_margin, top_left_margin, canvas_image_width, canvas_image_height);
+            for (let i = 1; i <= totalPDFPages; i++) {
+                pdf.addPage(PDF_Width, PDF_Height);
+                pdf.addImage(imgData, 'JPG', top_left_margin, -(PDF_Height * i) + (top_left_margin * 4), canvas_image_width, canvas_image_height);
+            }
+            pdf.save("resume.pdf");
+            dlBtn.style.display = 'block';
+        });
+    }
+</script>
 </html>
