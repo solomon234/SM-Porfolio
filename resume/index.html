@@ -3,424 +3,915 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solomon Muratov - Resume</title>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
-    <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
-</head>
-<style>
-    :root {
-        --primary-color: #2563eb;
-        --text-color: #1f2937;
-        --bg-color: #f3f4f6;
-    }
-
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-        line-height: 1.6;
-        color: var(--text-color);
-        background: var(--bg-color);
-        padding: 2rem 1rem;
-    }
-
-    .container {
-        max-width: 900px;
-        margin: 0 auto;
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        overflow: hidden;
-    }
-
-    header {
-        background: var(--primary-color);
-        color: white;
-        padding: 2rem;
-        position: relative;
-    }
-
-    .download-btn {
-        position: absolute;
-        top: 2rem;
-        right: 2rem;
-        background: transparent;
-        border: 2px solid white;
-        color: white;
-        padding: 0.5rem 1rem;
-        border-radius: 4px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        transition: all 0.2s ease;
-    }
-
-    .download-btn:hover {
-        background: white;
-        color: var(--primary-color);
-    }
-
-    .name {
-        font-size: 2.5rem;
-        font-weight: bold;
-        margin-bottom: 0.5rem;
-    }
-
-    .title {
-        font-size: 1.25rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .contact-info {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        font-size: 0.9rem;
-    }
-
-    .contact-item {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-
-    .contact-item a {
-        color: white;
-        text-decoration: none;
-    }
-
-    .contact-item a:hover {
-        text-decoration: underline;
-    }
-
-    main {
-        padding: 2rem;
-    }
-
-    section {
-        margin-bottom: 2rem;
-    }
-
-    h2 {
-        color: var(--primary-color);
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-        border-bottom: 2px solid var(--primary-color);
-        padding-bottom: 0.5rem;
-    }
-
-    .skills-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-    }
-
-    .skill-tag {
-        background: #e5e7eb;
-        padding: 0.25rem 0.75rem;
-        border-radius: 15px;
-        font-size: 0.9rem;
-    }
-
-    .experience-item {
-        margin-bottom: 1.5rem;
-        padding-left: 1rem;
-        border-left: 3px solid var(--primary-color);
-    }
-
-    .experience-header {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 0.5rem;
-    }
-
-    .company {
-        font-weight: bold;
-        font-size: 1.1rem;
-    }
-
-    .location {
-        font-style: italic;
-        color: #666;
-    }
-
-    .date {
-        color: #666;
-    }
-
-    .position {
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-    }
-
-    ul {
-        list-style-position: inside;
-        margin-left: 1rem;
-    }
-
-    li {
-        margin-bottom: 0.5rem;
-    }
-
-    .education-item, .award-item {
-        margin-bottom: 1rem;
-    }
-
-    @media (max-width: 600px) {
-        .contact-info {
-            flex-direction: column;
+    <title>Solomon Muratov - Software Development Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Light Mode Colors */
+            --bg-primary: #ffffff;
+            --bg-secondary: #fafafa;
+            --bg-card: #ffffff;
+            --text-primary: #1a1a1a;
+            --text-secondary: #666666;
+            --text-muted: #999999;
+            --accent-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --accent-secondary: #14b8a6;
+            --accent-tertiary: #f59e0b;
+            --border-color: #e5e7eb;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --gradient-bg: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #14b8a6 100%);
         }
 
-        .experience-header {
-            flex-direction: column;
+        [data-theme="dark"] {
+            /* Dark Mode Colors */
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --bg-card: #1e293b;
+            --text-primary: #e2e8f0;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent-primary: linear-gradient(135deg, #818cf8 0%, #a78bfa 100%);
+            --accent-secondary: #06b6d4;
+            --accent-tertiary: #fbbf24;
+            --border-color: #334155;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            --gradient-bg: linear-gradient(135deg, #818cf8 0%, #a78bfa 50%, #06b6d4 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            padding: 1rem 0.5rem;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            font-size: 16px;
+            transition: all 0.3s ease;
+            overflow-x: hidden;
         }
-    }
-</style>
+
+        /* Animated Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-bg);
+            background-size: 200% 200%;
+            animation: gradientShift 15s ease infinite;
+            z-index: -2;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .bg-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-primary);
+            opacity: 0.95;
+            z-index: -1;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Dark Mode Toggle */
+        .theme-toggle {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            z-index: 1000;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            padding: 0.5rem;
+            cursor: pointer;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .theme-icon {
+            display: block;
+            width: 1.5rem;
+            height: 1.5rem;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            padding: 2rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease 0.3s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: var(--accent-primary);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
+            animation: fadeInUp 1s ease 0.5s both;
+        }
+
+        .hero-tagline {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-weight: 400;
+            animation: fadeInUp 1s ease 0.7s both;
+        }
+
+        .hero-intro {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            line-height: 1.7;
+            animation: fadeInUp 1s ease 0.9s both;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 4rem;
+            animation: fadeInUp 1s ease 1.1s both;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .social-link:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-secondary);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        /* Main Content */
+        .main-content {
+            background: var(--bg-primary);
+            position: relative;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 4rem 0;
+            background: var(--bg-secondary);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: var(--bg-card);
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* Section Headers */
+        .section {
+            padding: 4rem 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: var(--accent-primary);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border-color);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-card {
+            margin-left: 0;
+            margin-right: 50%;
+            padding-right: 2rem;
+        }
+
+        .timeline-item:nth-child(even) .timeline-card {
+            margin-left: 50%;
+            margin-right: 0;
+            padding-left: 2rem;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 2rem;
+            width: 16px;
+            height: 16px;
+            background: var(--accent-secondary);
+            border: 4px solid var(--bg-primary);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
+        .timeline-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .timeline-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .period-badge {
+            display: inline-block;
+            background: var(--accent-primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .company-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .job-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .highlights {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlights li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .highlights li:before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent-secondary);
+            font-weight: bold;
+        }
+
+        .awards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .award {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .skill-category {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .skill-category-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .skill-tag {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: var(--accent-secondary);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bg-secondary);
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-content {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .theme-toggle {
+                top: 1rem;
+                right: 1rem;
+            }
+
+            .hero {
+                padding: 1rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .timeline::before {
+                left: 1rem;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-card,
+            .timeline-item:nth-child(even) .timeline-card {
+                margin-left: 0;
+                margin-right: 0;
+                padding-left: 3rem;
+                padding-right: 1rem;
+            }
+
+            .timeline-dot {
+                left: 1rem;
+            }
+
+            .social-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .social-link {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-    <header>
-        <h1 class="name">Solomon Muratov</h1>
-        <p class="title">Software Development Manager</p>
-        <div class="contact-info">
-            <div class="contact-item">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                    <polyline points="22,6 12,13 2,6"/>
-                </svg>
-                <a href="mailto:solomonmuratov@gmail.com">solomonmuratov@gmail.com</a>
-            </div>
-            <div class="contact-item">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                </svg>
-                <span>(516) 362-6996</span>
-            </div>
-            <div class="contact-item">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                    <circle cx="12" cy="10" r="3"/>
-                </svg>
-                <span>Danbury, CT 06810</span>
-            </div>
-            <div class="contact-item">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-                </svg>
-                <a href="https://github.com/solomon234/">github.com/solomon234</a>
-            </div>
-            <div class="contact-item">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                    <rect x="2" y="9" width="4" height="12"/>
-                    <circle cx="4" cy="4" r="2"/>
-                </svg>
-                <a href="https://linkedin.com/in/solomonmuratov/">linkedin.com/in/solomonmuratov</a>
+    <div class="animated-bg"></div>
+    <div class="bg-overlay"></div>
+    
+    <!-- Dark Mode Toggle -->
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+        <span class="theme-icon">🌙</span>
+    </button>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Solomon Muratov</h1>
+            <p class="hero-tagline">Building distributed systems &amp; leading teams that ship at scale</p>
+            <p class="hero-intro">I'm a Software Development Manager with 7+ years of experience architecting cloud-native systems and mentoring engineers. I'm passionate about developer experience, AWS infrastructure, and building high-performing teams that deliver quality software.</p>
+            
+            <div class="social-links">
+                <a href="https://github.com/solomonmuratov" target="_blank" class="social-link">
+                    <span>💻</span> GitHub
+                </a>
+                <a href="https://linkedin.com/in/solomonmuratov" target="_blank" class="social-link">
+                    <span>💼</span> LinkedIn
+                </a>
+                <a href="mailto:solomon@solomonmuratov.com" class="social-link">
+                    <span>📧</span> Email
+                </a>
             </div>
         </div>
-        <button class="download-btn" onclick="CreatePDFfromHTML()">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                <polyline points="7 10 12 15 17 10"/>
-                <line x1="12" y1="15" x2="12" y2="3"/>
-            </svg>
-            Download PDF
-        </button>
-    </header>
+        
+        <div class="scroll-indicator">
+            <div>↓ Scroll to explore</div>
+        </div>
+    </section>
 
-    <main>
-        <section>
-            <h2>Professional Summary</h2>
-            <p>Skilled Software Development Manager with 7 years of experience in managing distributed systems,
-                mentoring junior engineers, and
-                introducing new processes to improve department efficiency. Proficient in .NET 8 Core, Vue.js, Node.js,
-                Python, and AWS, with expertise in
-                cloud technologies and IaC utilities. Strong background in computer programming, including C#, ASP.NET,
-                and SQL.</p>
-        </section>
-
-        <section>
-            <h2>Skills</h2>
-            <div class="skills-list">
-                <span class="skill-tag">C#</span>
-                <span class="skill-tag">.NET Core</span>
-                <span class="skill-tag">Javascript</span>
-                <span class="skill-tag">NodeJS</span>
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">VueJS</span>
-                <span class="skill-tag">Angular</span>
-                <span class="skill-tag">AWS</span>
-                <span class="skill-tag">Microsoft SQL Server</span>
-                <span class="skill-tag">Web Services API</span>
-                <span class="skill-tag">Lambda</span>
-                <span class="skill-tag">Bash</span>
-                <span class="skill-tag">Powershell</span>
-                <span class="skill-tag">Solutions Architect</span>
-            </div>
-        </section>
-
-        <section>
-            <h2>Work Experience</h2>
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div>
-                        <div class="company">BizLibrary</div>
-                        <div class="location">St. Louis, MO (Remote)</div>
-                    </div>
-                    <div class="date">June 2021 - Present</div>
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Impact &amp; Experience</h2>
                 </div>
-                <div class="position">Software Development Manager</div>
-                <ul>
-                    <li>Advanced from Software Developer to Lead Developer and now Software Development Manager, leading
-                        development of BizLMS, a cloud-hosted SaaS product serving 300,000+ users
-                    </li>
-                    <li>Architected and maintained distributed systems using .NET 6 Core, C# REST API, Vue.js, frontend,
-                        and serverless applications with Node.js and Python Lambda functions
-                    </li>
-                    <li>Implemented and managed SOC2-compliant deployment processes while leveraging AWS services (Cloud
-                        Search, S3, Lambda, Redshift, SQS, API Gateway, Kendra, Personalize, Glue) and IaC utilities
-                        like SAM
-                    </li>
-                    <li>Established comprehensive employee development programs including standardized 1:1s, peer
-                        reviews, and mentorship initiatives for junior to senior-level engineers
-                    </li>
-                    <li>Improved departmental efficiency by introducing new processes for resource management, task
-                        prioritization, and risk mitigation
-                    </li>
-                    <li>Built strong stakeholder relationships to align development efforts with business objectives and
-                        deliver complex projects under tight deadlines
-                    </li>
-                </ul>
-            </div>
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div>
-                        <div class="company">PetVet Care Centers</div>
-                        <div class="location">Westport, CT (Hybrid)</div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value">7+</div>
+                        <div class="stat-label">Years Experience</div>
                     </div>
-                    <div class="date">April 2020 - June 2021</div>
-                </div>
-                <div class="position">.NET Developer</div>
-                <ul>
-                    <li>Led development of internal business portal using ASP Web Forms and ASP.NET/AngularJS, while
-                        optimizing database performance and delivering executive-level reporting
-                    </li>
-                    <li>Architected scalable web applications, console applications, and automated SQL processes</li>
-                    <li>Collaborated with cross-functional teams to gather requirements and implement solutions</li>
-                    <li>Created and maintained comprehensive financial reports and analytics for executive
-                        decision-making
-                    </li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div>
-                        <div class="company">The Metro Group Inc.</div>
-                        <div class="location">Long Island City, NY (On-Site)</div>
+                    <div class="stat-card">
+                        <div class="stat-value">300K+</div>
+                        <div class="stat-label">Users Served</div>
                     </div>
-                    <div class="date">January 2019 - April 2020</div>
-                </div>
-                <div class="position">.NET Web Developer</div>
-                <ul>
-                    <li>Enhanced and maintained CRM system using C# ASP.NET MVC and AngularJS, focusing on bug
-                        resolution and process automation
-                    </li>
-                    <li>Implemented automated workflows to improve system efficiency and reliability</li>
-                    <li>Developed SSRS financial reports to support data-driven decision making</li>
-                    <li>Led comprehensive performance optimization initiatives across web applications, SSRS financial
-                        reporting suite, month-end reconciliation processes, and SQL query execution, significantly
-                        reducing system-wide response times and improving user experience
-                    </li>
-                </ul>
-            </div>
-
-            <div class="experience-item">
-                <div class="experience-header">
-                    <div>
-                        <div class="company">Linzer Products Corp.</div>
-                        <div class="location">West Babylon, NY (On-Site)</div>
+                    <div class="stat-card">
+                        <div class="stat-value">10+</div>
+                        <div class="stat-label">Team Size</div>
                     </div>
-                    <div class="date">March 2018 - January 2019</div>
+                    <div class="stat-card">
+                        <div class="stat-value">15+</div>
+                        <div class="stat-label">AWS Services</div>
+                    </div>
                 </div>
-                <div class="position">IT / Computer Programming</div>
-                <ul>
-                    <li>Programming with BASIC on a legacy NoSQL DB and building reports in that same environment</li>
-                    <li>Working with IT Admin, assisting with tasks including setting up printers and assisting users
-                        using Active Directory
-                    </li>
-                </ul>
             </div>
         </section>
 
-        <section>
-            <h2>Education</h2>
-            <div class="education-item">
-                <div class="company">Farmingdale State College</div>
-                <div>Bachelor's: Management Information Systems (Programming)</div>
-                <div class="date">December 2017</div>
-            </div>
-            <div class="education-item">
-                <div class="company">Nassau Community College</div>
-                <div>Associates of Arts and Sciences (Math & Science)</div>
-                <div class="date">December 2014</div>
+        <!-- Experience Timeline -->
+        <section class="section" id="experience">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Professional Journey</h2>
+                    <p class="section-subtitle">From developer to manager, building scalable systems and leading high-performing teams</p>
+                </div>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <div class="period-badge">2021 - Present</div>
+                            <h3 class="company-title">Software Development Manager at BizLibrary</h3>
+                            <p class="job-description">Leading development of BizLMS, a cloud-hosted SaaS learning platform serving 300,000+ users. Advanced from Software Developer → Lead Developer → Development Manager.</p>
+                            <ul class="highlights">
+                                <li>Architect distributed systems using .NET Core, Vue.js, and serverless Lambda functions (Node.js/Python)</li>
+                                <li>Implement SOC2-compliant deployment processes leveraging 15+ AWS services (CloudSearch, S3, Redshift, SQS, API Gateway, Kendra, Personalize, Glue)</li>
+                                <li>Establish comprehensive team development programs with standardized 1:1s, peer reviews, and mentorship</li>
+                                <li>Build stakeholder relationships aligning technical delivery with business objectives</li>
+                            </ul>
+                            <div class="awards">
+                                <div class="award">🏆 Manager of the Year (February 2025)</div>
+                                <div class="award">⭐ Passion to Be the Best (February 2023)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <div class="period-badge">2020 - 2021</div>
+                            <h3 class="company-title">.NET Developer at PetVet Care Centers</h3>
+                            <p class="job-description">Led development of internal business portal and executive reporting systems.</p>
+                            <ul class="highlights">
+                                <li>Built scalable web applications using ASP.NET, AngularJS, and SQL Server</li>
+                                <li>Optimized database performance for complex reporting requirements</li>
+                                <li>Delivered executive-level dashboards and analytics</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <div class="period-badge">2019 - 2020</div>
+                            <h3 class="company-title">.NET Web Developer at The Metro Group Inc.</h3>
+                            <p class="job-description">Enhanced CRM systems and implemented automated workflows for operational efficiency.</p>
+                            <ul class="highlights">
+                                <li>Developed features using C# ASP.NET MVC and AngularJS</li>
+                                <li>Implemented automated workflows reducing manual processes</li>
+                                <li>Led performance optimization initiatives across web apps and SSRS reporting</li>
+                            </ul>
+                            <div class="awards">
+                                <div class="award">🌟 Rookie of the Year (December 2019)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <div class="period-badge">2018 - 2019</div>
+                            <h3 class="company-title">IT / Computer Programming at Linzer Products Corp.</h3>
+                            <p class="job-description">Maintained legacy systems and provided IT administration support.</p>
+                            <ul class="highlights">
+                                <li>Programming with BASIC on legacy NoSQL database</li>
+                                <li>IT administration including Active Directory management</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <div class="period-badge">2014 - 2017</div>
+                            <h3 class="company-title">Education</h3>
+                            <ul class="highlights">
+                                <li><strong>Farmingdale State College:</strong> Bachelor's in Management Information Systems (Programming) - December 2017</li>
+                                <li><strong>Nassau Community College:</strong> Associates of Arts and Sciences (Math &amp; Science) - December 2014</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </section>
 
-        <section>
-            <h2>Awards</h2>
-            <div class="award-item">
-                <div class="company">Manager of the Year</div>
-                <div>Issued by BizLibrary - February 2025</div>
-            </div>
-            <div class="award-item">
-                <div class="company">Passion to Be the Best</div>
-                <div>Issued by BizLibrary - February 2023</div>
-            </div>
-            <div class="award-item">
-                <div class="company">Rookie of the Year</div>
-                <div>Issued by The Metro Group Inc. - December 2019</div>
+        <!-- Skills Section -->
+        <section class="section" id="skills">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Tech Stack</h2>
+                    <p class="section-subtitle">Technologies, frameworks, and tools I use to build scalable systems</p>
+                </div>
+                
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3 class="skill-category-title">Languages</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">C#</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">PowerShell</span>
+                            <span class="skill-tag">Bash</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3 class="skill-category-title">Frameworks</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">.NET Core</span>
+                            <span class="skill-tag">Vue.js</span>
+                            <span class="skill-tag">Nuxt.js</span>
+                            <span class="skill-tag">Angular</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Express</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3 class="skill-category-title">Cloud &amp; AWS</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">AWS Lambda</span>
+                            <span class="skill-tag">S3</span>
+                            <span class="skill-tag">API Gateway</span>
+                            <span class="skill-tag">CloudSearch</span>
+                            <span class="skill-tag">Redshift</span>
+                            <span class="skill-tag">SQS</span>
+                            <span class="skill-tag">Kendra</span>
+                            <span class="skill-tag">Personalize</span>
+                            <span class="skill-tag">Glue</span>
+                            <span class="skill-tag">EventBridge</span>
+                            <span class="skill-tag">Cognito</span>
+                            <span class="skill-tag">SAM/IaC</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3 class="skill-category-title">Databases</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">SQL Server</span>
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">NoSQL</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3 class="skill-category-title">DevOps</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">CI/CD</span>
+                            <span class="skill-tag">SOC2 Compliance</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3 class="skill-category-title">Leadership</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Team Development</span>
+                            <span class="skill-tag">Mentorship</span>
+                            <span class="skill-tag">Stakeholder Management</span>
+                            <span class="skill-tag">Process Improvement</span>
+                            <span class="skill-tag">Agile/Waterfall</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
-    </main>
-</div>
-</body>
-<script>
+    </div>
 
-    function CreatePDFfromHTML() {
-        const container = document.getElementsByClassName('container')[0];
-        const dlBtn = document.getElementsByClassName('download-btn')[0];
-        dlBtn.style.display = 'none';
-        const HTML_Width = container.clientWidth;
-        const HTML_Height = container.clientHeight;
-        const top_left_margin = 15;
-        const PDF_Width = HTML_Width + (top_left_margin * 2);
-        const PDF_Height = (PDF_Width * 1.5) + (top_left_margin * 2);
-        const canvas_image_width = HTML_Width;
-        const canvas_image_height = HTML_Height;
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>Based in Connecticut 🏡 • Built with vanilla HTML, CSS, and JavaScript</p>
+                <p>© 2025 Solomon Muratov. Crafted with passion for clean, efficient code.</p>
+            </div>
+        </div>
+    </footer>
 
-        const totalPDFPages = Math.ceil(HTML_Height / PDF_Height) - 1;
-
-        html2canvas(container).then(function (canvas) {
-            const imgData = canvas.toDataURL("image/jpeg", 1.0);
-            const pdf = new jsPDF('p', 'pt', [PDF_Width, PDF_Height]);
-            pdf.addImage(imgData, 'JPG', top_left_margin, top_left_margin, canvas_image_width, canvas_image_height);
-            for (let i = 1; i <= totalPDFPages; i++) {
-                pdf.addPage(PDF_Width, PDF_Height);
-                pdf.addImage(imgData, 'JPG', top_left_margin, -(PDF_Height * i) + (top_left_margin * 4), canvas_image_width, canvas_image_height);
+    <script>
+        // Theme Toggle
+        function toggleTheme() {
+            const html = document.documentElement;
+            const themeIcon = document.querySelector('.theme-icon');
+            const currentTheme = html.getAttribute('data-theme');
+            
+            if (currentTheme === 'dark') {
+                html.removeAttribute('data-theme');
+                themeIcon.textContent = '🌙';
+                saveTheme('light');
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                themeIcon.textContent = '☀️';
+                saveTheme('dark');
             }
-            pdf.save("resume.pdf");
-            dlBtn.style.display = 'block';
+        }
+        
+        function saveTheme(theme) {
+            try {
+                // Use a simple variable to track theme preference
+                window.currentTheme = theme;
+            } catch (e) {
+                // Ignore storage errors in sandboxed environment
+            }
+        }
+        
+        function loadTheme() {
+            try {
+                const savedTheme = window.currentTheme;
+                if (savedTheme === 'dark') {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    document.querySelector('.theme-icon').textContent = '☀️';
+                }
+            } catch (e) {
+                // Ignore storage errors in sandboxed environment
+            }
+        }
+        
+        // Scroll Animations
+        function animateOnScroll() {
+            const sections = document.querySelectorAll('.section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        }
+        
+        // Smooth scroll for internal links
+        function setupSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            loadTheme();
+            animateOnScroll();
+            setupSmoothScroll();
+            
+            // Add stagger animation to timeline items
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            timelineItems.forEach((item, index) => {
+                item.style.animationDelay = `${index * 0.2}s`;
+            });
         });
-    }
-</script>
+        
+        // Parallax effect for background
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.animated-bg');
+            if (parallax) {
+                const speed = scrolled * 0.5;
+                parallax.style.transform = `translateY(${speed}px)`;
+            }
+        });
+    </script>
+</body>
 </html>
