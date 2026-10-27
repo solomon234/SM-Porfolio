@@ -98,7 +98,19 @@
             justify-content: flex-end;
         }
 
+        .site-header .nav {
+            justify-content: safe flex-end;
+            overflow-x: auto;
+            scrollbar-width: none;
+            padding-right: 4rem;
+        }
+
+        .site-header .nav::-webkit-scrollbar {
+            display: none;
+        }
+
         .site-header a {
+            white-space: nowrap;
             color: var(--text-primary);
             text-decoration: none;
             padding: 0.5rem 0.75rem;
@@ -687,7 +699,9 @@
     <nav class="nav">
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
+        <a href="#projects">Case Studies</a>
+        <a href="#built">Built</a>
+        <a href="#build-log">Build Log</a>
         <a href="#contact">Contact</a>
         <a href="./Solomon_Muratov_Resume.pdf" class="btn btn-primary">Resume</a>
     </nav>
@@ -957,8 +971,8 @@
                     <p class="job-description">Re-architected search using AWS CloudSearch and Kendra, improving
                         relevance and cutting average query latency.</p>
                     <ul class="highlights">
-                        <li>Role: `SDM` / Architect</li>
-                        <li>Stack: `.NET Core`, `Vue.js`, `AWS CloudSearch`, `Kendra`, `SQS`</li>
+                        <li>Role: SDM / Architect</li>
+                        <li>Stack: .NET Core, Vue.js, AWS CloudSearch, Kendra, SQS</li>
                         <li>Impact: −45% p95 latency, +22% task completion rate, 300K+ users</li>
                     </ul>
                 </article>
@@ -967,14 +981,81 @@
                     <p class="job-description">Introduced recommendations to increase content engagement.</p>
                     <ul class="highlights">
                         <li>Role: Product/Tech Lead</li>
-                        <li>Stack: `AWS Personalize`, `Lambda`, `Redshift`, `Glue`</li>
+                        <li>Stack: AWS Personalize, Lambda, Redshift, Glue</li>
                         <li>Impact: +18% weekly active learners, +12% session duration</li>
                     </ul>
                 </article>
             </div>
         </div>
     </section>
-    <!--    Contact-->
+    
+    <!--    Things I've built-->
+    <section class="section" id="built">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Things I've Built</h2>
+                <p class="section-subtitle">Side projects you can try or read, shipped on my own time</p>
+            </div>
+            <div class="skills-grid">
+                <article class="skill-category">
+                    <h3 class="skill-category-title">Backsplash AI</h3>
+                    <p class="job-description">Generate a custom backsplash image for your work video calls.</p>
+                    <ul class="highlights">
+                        <li>Stack: Nuxt 4, Cloudflare Workers, KV</li>
+                        <li>Daily generation limit enforced at the edge</li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="https://backsplash-ai.solomonmuratov.workers.dev" target="_blank" rel="noopener" class="social-link">Try it</a>
+                        <a href="https://github.com/solomon234/backsplash-ai" target="_blank" rel="noopener" class="social-link">Source</a>
+                    </div>
+                </article>
+                <article class="skill-category">
+                    <h3 class="skill-category-title">Ideaverse Home</h3>
+                    <p class="job-description">An Obsidian plugin that shows one effort per screen, with the next smallest move pulled from your own notes.</p>
+                    <ul class="highlights">
+                        <li>Stack: TypeScript, Obsidian API</li>
+                        <li>Local only: no network calls</li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="https://github.com/solomon234/ideaverse-home" target="_blank" rel="noopener" class="social-link">Source</a>
+                    </div>
+                </article>
+                <article class="skill-category">
+                    <h3 class="skill-category-title">Optical POS</h3>
+                    <p class="job-description">A point-of-sale system for independent optical shops.</p>
+                    <ul class="highlights">
+                        <li>Status: in development</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+    <!--    Build log-->
+    <section class="section" id="build-log">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Build Log</h2>
+                <p class="section-subtitle">Short notes on what I'm making and what I learned</p>
+            </div>
+            <div class="skills-grid">
+                <article class="skill-category">
+                    <h3 class="skill-category-title">Oct 2026: A home screen for an Obsidian vault</h3>
+                    <p class="job-description">Why Ideaverse Home shows one effort at a time, and how it picks the next move from the first unchecked item in your notes.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/solomon234/ideaverse-home#readme" target="_blank" rel="noopener" class="social-link">Read more</a>
+                    </div>
+                </article>
+                <article class="skill-category">
+                    <h3 class="skill-category-title">Oct 2026: Rate-limiting an AI image app on Cloudflare</h3>
+                    <p class="job-description">Capping daily generations with Workers KV so a public demo can't run up a bill.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/solomon234/backsplash-ai#readme" target="_blank" rel="noopener" class="social-link">Read more</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+<!--    Contact-->
     <section class="section" id="contact">
         <div class="container">
             <div class="section-header">
@@ -997,7 +1078,7 @@
     <div class="container">
         <div class="footer-content">
             <p>Based in Connecticut 🏡 • Built with vanilla HTML, CSS, and JavaScript</p>
-            <p>© 2025 Solomon Muratov. Crafted with passion for clean, efficient code.</p>
+            <p>© 2026 Solomon Muratov. Crafted with passion for clean, efficient code.</p>
         </div>
     </div>
 </footer>
