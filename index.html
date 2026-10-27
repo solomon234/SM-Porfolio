@@ -1,1201 +1,274 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Senior Engineering Manager building distributed systems on AWS. 8+ years leading teams, architecting cloud-native platforms, and shipping at scale.">
-    <link rel="canonical" href="https://solomonmuratov.com/">
-    <link rel="icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <meta property="og:title" content="Solomon Muratov – Senior Engineering Manager">
-    <meta property="og:description" content="Building distributed systems & leading teams that ship at scale.">
-    <meta property="og:url" content="https://solomonmuratov.com/">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://solomonmuratov.com/og-image.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Solomon Muratov – Senior Engineering Manager">
-    <meta name="twitter:description" content="Building distributed systems & leading teams that ship at scale.">
-    <meta name="twitter:image" content="https://solomonmuratov.com/og-image.jpg">
-    <title>Solomon Muratov - Senior Engineering Manager</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-          rel="stylesheet">
-    <style>
-        :root {
-            /* Light Mode Colors */
-            --bg-primary: #ffffff;
-            --bg-secondary: #fafafa;
-            --bg-card: #ffffff;
-            --text-primary: #1a1a1a;
-            --text-secondary: #666666;
-            --text-muted: #999999;
-            --accent-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --accent-secondary: #14b8a6;
-            --accent-tertiary: #f59e0b;
-            --border-color: #e5e7eb;
-            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            --gradient-bg: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #14b8a6 100%);
-        }
-
-        [data-theme="dark"] {
-            /* Dark Mode Colors */
-            --bg-primary: #0f172a;
-            --bg-secondary: #1e293b;
-            --bg-card: #1e293b;
-            --text-primary: #e2e8f0;
-            --text-secondary: #94a3b8;
-            --text-muted: #64748b;
-            --accent-primary: linear-gradient(135deg, #818cf8 0%, #a78bfa 100%);
-            --accent-secondary: #06b6d4;
-            --accent-tertiary: #fbbf24;
-            --border-color: #334155;
-            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
-            --gradient-bg: linear-gradient(135deg, #818cf8 0%, #a78bfa 50%, #06b6d4 100%);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            color: var(--text-primary);
-            background: var(--bg-primary);
-            font-size: 16px;
-            transition: all 0.3s ease;
-            overflow-x: hidden;
-        }
-
-        .site-header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(8px);
-            background: color-mix(in oklab, var(--bg-primary) 80%, transparent);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .site-header .nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0.75rem 1rem;
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-            justify-content: flex-end;
-        }
-
-        .site-header .nav {
-            justify-content: safe flex-end;
-            overflow-x: auto;
-            scrollbar-width: none;
-            padding-right: 4rem;
-        }
-
-        .site-header .nav::-webkit-scrollbar {
-            display: none;
-        }
-
-        .site-header a {
-            white-space: nowrap;
-            color: var(--text-primary);
-            text-decoration: none;
-            padding: 0.5rem 0.75rem;
-            border-radius: 10px;
-        }
-
-        .site-header a:hover, .site-header a:focus {
-            background: var(--bg-secondary);
-            outline: none;
-        }
-
-        .skip-link {
-            position: absolute;
-            left: -999px;
-            top: auto;
-            width: 1px;
-            height: 1px;
-            overflow: hidden;
-        }
-
-        .skip-link:focus {
-            left: 1rem;
-            top: 1rem;
-            width: auto;
-            height: auto;
-            background: var(--accent-secondary);
-            color: #fff;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-        }
-
-        .btn-primary {
-            background: var(--accent-secondary);
-            color: #fff;
-            border: 1px solid var(--accent-secondary);
-        }
-
-        .btn-primary:hover {
-            filter: brightness(1.05);
-        }
-
-        /* Animated Background */
-        .animated-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-bg);
-            background-size: 200% 200%;
-            animation: gradientShift 15s ease infinite;
-            z-index: -2;
-        }
-
-        @keyframes gradientShift {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        .bg-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--bg-primary);
-            opacity: 0.95;
-            z-index: -1;
-            transition: opacity 0.3s ease;
-        }
-
-        /* Dark Mode Toggle */
-        .theme-toggle {
-            position: fixed;
-            top: 2rem;
-            right: 2rem;
-            z-index: 1000;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 50px;
-            padding: 0.5rem;
-            cursor: pointer;
-            box-shadow: var(--shadow-md);
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .theme-toggle:hover {
-            transform: scale(1.1);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .theme-icon {
-            display: block;
-            width: 1.5rem;
-            height: 1.5rem;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            position: relative;
-            padding: 2rem;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 1s ease 0.3s forwards;
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero h1 {
-            font-size: clamp(3rem, 8vw, 5rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: var(--accent-primary);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -0.02em;
-            animation: fadeInUp 1s ease 0.5s both;
-        }
-
-        .hero-tagline {
-            font-size: clamp(1.2rem, 3vw, 1.8rem);
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            font-weight: 400;
-            animation: fadeInUp 1s ease 0.7s both;
-        }
-
-        .hero-intro {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto 3rem;
-            line-height: 1.7;
-            animation: fadeInUp 1s ease 0.9s both;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            margin-bottom: 4rem;
-            animation: fadeInUp 1s ease 1.1s both;
-        }
-
-        .social-link {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 50px;
-            color: var(--text-primary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .social-link:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--accent-secondary);
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: bounce 2s infinite;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateX(-50%) translateY(0);
-            }
-            40% {
-                transform: translateX(-50%) translateY(-10px);
-            }
-            60% {
-                transform: translateX(-50%) translateY(-5px);
-            }
-        }
-
-        /* Main Content */
-        .main-content {
-            background: var(--bg-primary);
-            position: relative;
-            z-index: 1;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Stats Section */
-        .stats-section {
-            padding: 4rem 0;
-            background: var(--bg-secondary);
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .stat-card {
-            text-align: center;
-            padding: 2rem;
-            background: var(--bg-card);
-            border-radius: 20px;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .stat-value {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--accent-secondary);
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            color: var(--text-secondary);
-            font-weight: 500;
-        }
-
-        /* Section Headers */
-        .section {
-            padding: 4rem 0;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: var(--accent-primary);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .section-subtitle {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Timeline */
-        .timeline {
-            position: relative;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--border-color);
-            transform: translateX(-50%);
-        }
-
-        .timeline-item {
-            margin-bottom: 3rem;
-            position: relative;
-        }
-
-        .timeline-item:nth-child(odd) .timeline-card {
-            margin-left: 0;
-            margin-right: 50%;
-            padding-right: 2rem;
-        }
-
-        .timeline-item:nth-child(even) .timeline-card {
-            margin-left: 50%;
-            margin-right: 0;
-            padding-left: 2rem;
-        }
-
-        .timeline-dot {
-            position: absolute;
-            left: 50%;
-            top: 2rem;
-            width: 16px;
-            height: 16px;
-            background: var(--accent-secondary);
-            border: 4px solid var(--bg-primary);
-            border-radius: 50%;
-            transform: translateX(-50%);
-            z-index: 2;
-        }
-
-        .timeline-card {
-            background: var(--bg-card);
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .timeline-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .period-badge {
-            display: inline-block;
-            background: var(--accent-primary);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .company-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .job-description {
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-
-        .highlights {
-            list-style: none;
-            margin-bottom: 1.5rem;
-        }
-
-        .highlights li {
-            position: relative;
-            padding-left: 1.5rem;
-            margin-bottom: 0.75rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        .highlights li:before {
-            content: '▸';
-            position: absolute;
-            left: 0;
-            color: var(--accent-secondary);
-            font-weight: bold;
-        }
-
-        .awards {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-        }
-
-        .award {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: linear-gradient(135deg, #fbbf24, #f59e0b);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            box-shadow: var(--shadow-sm);
-        }
-
-        /* Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .skill-category {
-            background: var(--bg-card);
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-
-        .skill-category:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .skill-category-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            color: var(--text-primary);
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-        }
-
-        .skill-tag {
-            background: var(--bg-secondary);
-            color: var(--text-primary);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-
-        .skill-tag:hover {
-            background: var(--accent-secondary);
-            color: white;
-            transform: scale(1.05);
-        }
-
-        /* Footer */
-        .footer {
-            background: var(--bg-secondary);
-            padding: 3rem 0;
-            text-align: center;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .footer-content {
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .theme-toggle {
-                top: 1rem;
-                right: 1rem;
-            }
-
-            .hero {
-                padding: 1rem;
-            }
-
-            .container {
-                padding: 0 1rem;
-            }
-
-            .timeline::before {
-                left: 1rem;
-            }
-
-            .timeline-item:nth-child(odd) .timeline-card,
-            .timeline-item:nth-child(even) .timeline-card {
-                margin-left: 0;
-                margin-right: 0;
-                padding-left: 3rem;
-                padding-right: 1rem;
-            }
-
-            .timeline-dot {
-                left: 1rem;
-            }
-
-            .social-links {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .social-link {
-                width: 100%;
-                justify-content: center;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation: none !important;
-                transition: none !important;
-            }
-
-            .animated-bg {
-                animation: none;
-            }
-        }
-    </style>
-    <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Solomon Muratov",
-            "jobTitle": "Senior Engineering Manager",
-            "url": "https://solomonmuratov.com/",
-            "image": "https://solomonmuratov.com/portrait.jpg",
-            "sameAs": [
-                "https://github.com/solomon234",
-                "https://www.linkedin.com/in/solomonmuratov"
-            ],
-            "worksFor": { "@type": "Organization", "name": "BizLibrary" },
-            "knowsAbout": ["Distributed Systems", "AWS", ".NET", "Leadership", "DevOps"],
-            "address": { "@type": "PostalAddress", "addressRegion": "CT", "addressCountry": "US" }
-        }
-    </script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Solomon Muratov - Senior Engineering Manager</title>
+<meta name="description" content="Senior Engineering Manager building distributed systems on AWS. 8+ years leading teams, architecting cloud-native platforms, and shipping at scale.">
+<meta name="theme-color" content="#050507">
+<link rel="canonical" href="https://solomonmuratov.com/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta property="og:title" content="Solomon Muratov - Senior Engineering Manager">
+<meta property="og:description" content="Building distributed systems and leading teams that ship at scale.">
+<meta property="og:url" content="https://solomonmuratov.com/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://solomonmuratov.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Solomon Muratov - Senior Engineering Manager">
+<meta name="twitter:description" content="Building distributed systems and leading teams that ship at scale.">
+<meta name="twitter:image" content="https://solomonmuratov.com/og-image.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Solomon Muratov","jobTitle":"Senior Engineering Manager","url":"https://solomonmuratov.com/","sameAs":["https://github.com/solomon234","https://www.linkedin.com/in/solomonmuratov"],"worksFor":{"@type":"Organization","name":"BizLibrary"},"knowsAbout":["Distributed Systems","AWS",".NET","Leadership","DevOps"],"address":{"@type":"PostalAddress","addressRegion":"CT","addressCountry":"US"}}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050507;--p:#0c0c10;--p2:#12121a;--fg:#e6e6ea;--mute:#8f8f9c;--r:#ff2a52;--c:#02d7f2;--y:#fcee0a;--line:#23232b}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:var(--bg);color:var(--fg);font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.55;overflow-x:hidden;
+ background-image:linear-gradient(rgba(2,215,242,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(2,215,242,.045) 1px,transparent 1px);background-size:48px 48px}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:40;background:repeating-linear-gradient(0deg,rgba(0,0,0,.14) 0 1px,transparent 1px 3px)}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:39;background:radial-gradient(ellipse at center,transparent 60%,rgba(0,0,0,.6) 100%)}
+a{color:inherit}
+.hud{font-family:Rajdhani,sans-serif;text-transform:uppercase;letter-spacing:.16em;font-weight:600}
+.mono{font-family:"Share Tech Mono",monospace}
+.frame{position:fixed;inset:10px;pointer-events:none;z-index:45}
+.frame i{position:absolute;width:26px;height:26px;border:2px solid var(--r)}
+.frame i:nth-child(1){left:0;top:0;border-right:0;border-bottom:0}
+.frame i:nth-child(2){right:0;top:0;border-left:0;border-bottom:0}
+.frame i:nth-child(3){left:0;bottom:0;border-right:0;border-top:0}
+.frame i:nth-child(4){right:0;bottom:0;border-left:0;border-top:0}
+.br{position:relative}
+.br::before,.br::after{content:"";position:absolute;width:14px;height:14px;border:2px solid var(--c);pointer-events:none}
+.br::before{left:-1px;top:-1px;border-right:0;border-bottom:0}
+.br::after{right:-1px;bottom:-1px;border-left:0;border-top:0}
+.app{position:relative;z-index:1;height:100dvh;max-width:1320px;margin:0 auto;padding:26px 40px 22px;display:grid;grid-template-rows:auto auto minmax(0,1fr) auto;gap:14px}
+/* status bar */
+.bar{display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:13px;color:var(--mute);border-bottom:1px solid var(--line);padding-bottom:10px}
+.bar b{color:var(--r);font-weight:700}
+.bar .ok{color:var(--y)}
+.bar .r{display:flex;gap:22px}
+/* hero strip */
+.hero{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:end}
+.boot{font-size:13px;color:var(--mute);line-height:1.7;min-height:66px}
+.boot b{color:var(--c);font-weight:400}
+.boot .okk{color:var(--y)}
+h1{font-family:Rajdhani;font-weight:700;text-transform:uppercase;font-size:clamp(44px,min(6.4vw,10.2vh),96px);line-height:.9;letter-spacing:.005em;margin:2px 0 6px;white-space:nowrap}
+h1 .a{color:var(--r);text-shadow:0 0 26px rgba(255,42,82,.55)}
+h1 .b{color:var(--fg)}
+.glitch{position:relative;display:inline-block}
+.glitch::before,.glitch::after{content:attr(data-t);position:absolute;left:0;top:0;width:100%;overflow:hidden;white-space:nowrap;text-shadow:none}
+.glitch::before{color:var(--c);clip-path:inset(0 0 58% 0);transform:translate(3px,0);animation:g1 4.2s infinite steps(1)}
+.glitch::after{color:var(--y);clip-path:inset(56% 0 0 0);transform:translate(-3px,0);animation:g2 4.2s infinite steps(1)}
+.glitch:hover::before{animation-duration:.6s}.glitch:hover::after{animation-duration:.5s}
+@keyframes g1{0%,88%,100%{transform:translate(3px,0)}89%{transform:translate(12px,-2px)}91%{transform:translate(-8px,2px)}93%{transform:translate(6px,0)}95%{transform:translate(-3px,1px)}}
+@keyframes g2{0%,86%,100%{transform:translate(-3px,0)}87%{transform:translate(-12px,2px)}90%{transform:translate(9px,-1px)}94%{transform:translate(-5px,0)}96%{transform:translate(2px,0)}}
+.role{font-family:Rajdhani;font-weight:600;font-size:clamp(15px,2.1vh,20px);letter-spacing:.2em;text-transform:uppercase;color:var(--c)}
+.role span{color:var(--mute)}
+.stats{display:grid;grid-template-columns:repeat(4,auto);gap:0 26px;background:var(--p);border:1px solid var(--line);padding:12px 20px}
+.stats div b{display:block;font-family:Rajdhani;font-weight:700;font-size:34px;line-height:1;color:var(--fg)}
+.stats div span{font-size:11px;color:var(--mute);letter-spacing:.14em;text-transform:uppercase;font-family:Rajdhani;font-weight:600}
+.stats div i{display:block;height:2px;margin-top:6px;background:linear-gradient(90deg,var(--r),var(--y));animation:fill 1.2s cubic-bezier(.2,.8,.2,1) both}
+@keyframes fill{from{transform:scaleX(0);transform-origin:left}}
+/* body */
+.main{display:grid;grid-template-columns:230px minmax(0,1fr);gap:16px;min-height:0}
+.rail{display:flex;flex-direction:column;gap:6px;min-height:0}
+.tab{appearance:none;border:0;background:var(--p);color:var(--mute);text-align:left;padding:0 16px;min-height:48px;font-family:Rajdhani;font-weight:700;font-size:17px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;display:flex;justify-content:space-between;align-items:center;border-left:3px solid var(--line);clip-path:polygon(0 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%);transition:background .15s,color .15s}
+.tab small{font-family:"Share Tech Mono";font-size:12px;letter-spacing:0}
+.tab:hover{color:var(--fg);background:var(--p2);border-left-color:var(--c)}
+.tab[aria-selected=true]{background:var(--r);color:#050507;border-left-color:var(--y)}
+.tab:focus-visible{outline:2px solid var(--c);outline-offset:2px}
+.rail .grow{flex:1}
+.quick{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:46px;padding:0 14px;font-family:Rajdhani;font-weight:700;font-size:16px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border:1px solid var(--r);color:var(--r);background:rgba(255,42,82,.07);clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));transition:background .15s,color .15s,box-shadow .15s}
+.btn.f{background:var(--r);color:#050507}
+.btn.cy{border-color:var(--c);color:var(--c);background:rgba(2,215,242,.07)}
+.btn:hover{background:var(--c);border-color:var(--c);color:#050507;box-shadow:0 0 26px rgba(2,215,242,.4)}
+.btn kbd{font-family:"Share Tech Mono";font-size:11px;border:1px solid currentColor;padding:0 5px;opacity:.8}
+.btn.wide{grid-column:1/-1}
+.panel{background:var(--p);border:1px solid var(--line);padding:22px 26px;overflow-y:auto;min-height:0;scrollbar-width:thin;scrollbar-color:var(--r) transparent}
+.panel[hidden]{display:none}
+.panel>h2{display:flex;justify-content:space-between;font-family:Rajdhani;font-weight:700;font-size:14px;letter-spacing:.22em;text-transform:uppercase;color:var(--c);padding-bottom:10px;border-bottom:1px solid var(--line);margin-bottom:16px}
+.panel>h2 span{color:var(--mute)}
+.hack{display:grid;grid-template-columns:84px minmax(0,1fr) 220px;gap:22px;align-items:center;background:var(--p2);border:1px solid var(--line);padding:18px 22px;margin-bottom:12px;transition:border-color .2s,box-shadow .2s}
+.hack:hover{border-color:var(--c);box-shadow:0 0 0 1px var(--c),0 0 30px rgba(2,215,242,.12)}
+.hack .ram{font-family:Rajdhani;font-weight:700;font-size:50px;line-height:1;color:var(--y);text-align:center}
+.hack .ram span{display:block;font-size:11px;letter-spacing:.18em;color:var(--mute);margin-top:3px}
+.hack h3,.node h3,.shard h3{font-family:Rajdhani;font-weight:700;text-transform:uppercase;line-height:1.05;letter-spacing:.02em}
+.hack h3{font-size:26px}
+.hack p{color:#b6b6c0;margin-top:4px}
+.st{font-size:13px;color:var(--mute);margin-top:8px}
+.fx{display:grid;gap:8px;border-left:1px solid var(--line);padding-left:20px}
+.fx b{display:block;font-family:Rajdhani;font-weight:700;font-size:28px;color:var(--c);line-height:1}
+.fx span{font-size:11px;color:var(--mute);letter-spacing:.12em;text-transform:uppercase;font-family:Rajdhani;font-weight:600}
+.net{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.node{background:var(--p2);border:1px solid var(--line);padding:20px;display:flex;flex-direction:column;gap:8px;min-height:300px}
+.node:hover{border-color:var(--r)}
+.node .s{align-self:flex-start;font-size:12px;padding:1px 10px;border:1px solid currentColor}
+.node .s.on{color:var(--y)}
+.node .s.off{color:var(--r);animation:blink 2.4s infinite}
+@keyframes blink{50%{opacity:.4}}
+.node h3{font-size:30px}
+.node p{color:#b6b6c0;font-size:15px}
+.node .lk{margin-top:auto;padding-top:14px;display:flex;gap:8px;flex-wrap:wrap}
+.node .lk .btn{flex:1;min-width:104px}
+.node.redact p span{background:#2a2a32;color:transparent;user-select:none;border-radius:2px}
+.shard{display:grid;grid-template-columns:100px minmax(0,1fr) 28px;gap:16px;align-items:center;padding:20px 0;border-top:1px solid var(--line);text-decoration:none}
+.shard:first-of-type{border-top:0}
+.shard:hover{background:linear-gradient(90deg,rgba(255,42,82,.14),transparent);padding-left:12px}
+.shard .mono{color:var(--r);font-size:13px}
+.shard h3{font-size:clamp(20px,2.6vw,28px)}
+.shard p{color:var(--mute)}
+.life{display:grid;grid-template-columns:120px minmax(0,1fr);gap:4px 18px}
+.life dt{font-family:"Share Tech Mono";font-size:13px;color:var(--c);padding-top:4px}
+.life dd{padding-bottom:12px;margin-bottom:6px;border-bottom:1px solid var(--line)}
+.life dd b{font-family:Rajdhani;font-weight:700;font-size:21px;text-transform:uppercase;letter-spacing:.03em;line-height:1.1;display:block}
+.life dd span{display:block;color:var(--mute);font-size:15px}
+.perk{display:inline-block;margin-top:6px;color:var(--y);border:1px solid var(--y);padding:0 10px;font-family:Rajdhani;font-weight:700;letter-spacing:.12em;font-size:12px;text-transform:uppercase;font-style:normal}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.chips span{font-family:"Share Tech Mono";font-size:12.5px;border:1px solid var(--line);padding:2px 10px;color:#c9c9d2}
+.chips span:hover{border-color:var(--c);color:var(--c)}
+.fixer a.mail{display:block;font-family:Rajdhani;font-weight:700;text-transform:uppercase;font-size:clamp(26px,5vw,64px);line-height:1;color:var(--fg);text-decoration:none;margin:8px 0 22px;word-break:break-word}
+.fixer a.mail:hover{color:var(--r);text-shadow:0 0 24px rgba(255,42,82,.5)}
+.fixer .row{display:grid;grid-template-columns:repeat(4,auto);gap:10px;justify-content:start}
+footer{display:flex;justify-content:space-between;gap:12px;font-size:12px;color:var(--mute)}
+@media (max-width:980px){
+ html,body{height:auto}
+ .frame{inset:5px}
+ .app{height:auto;min-height:100dvh;padding:20px 18px 18px;grid-template-rows:auto;gap:12px}
+ .bar .r span:not(.ok){display:none}
+ .hero{grid-template-columns:1fr;gap:14px}
+ h1{font-size:clamp(40px,12.5vw,70px);white-space:normal}
+ h1 .b{display:block}
+ .stats{grid-template-columns:repeat(4,1fr);gap:0 10px;padding:10px 12px}
+ .stats div b{font-size:24px}
+ .stats div span{font-size:10px;letter-spacing:.08em}
+ .main{grid-template-columns:1fr}
+ .rail{flex-direction:row;flex-wrap:wrap}
+ .rail .tabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;width:100%}
+ .tab{flex:0 0 auto;padding:0 14px}
+ .tab small{display:none}
+ .rail .grow{display:none}
+ .quick{width:100%;grid-template-columns:repeat(4,1fr)}
+ .quick .btn{padding:0 6px;font-size:14px;letter-spacing:.08em}
+ .quick .btn kbd{display:none}
+ .btn.wide{grid-column:auto}
+ .panel{padding:18px 16px;overflow:visible}
+ .hack{grid-template-columns:1fr;gap:10px}
+ .hack .ram{text-align:left}
+ .fx{border-left:0;padding-left:0;grid-template-columns:repeat(2,auto);justify-content:start;gap:20px}
+ .net{grid-template-columns:1fr}
+ .node{min-height:0}
+ .shard,.life{grid-template-columns:1fr;gap:2px}
+ .shard>span:last-child{display:none}
+ .fixer .row{grid-template-columns:1fr 1fr}
+ footer span:last-child{display:none}
+}
+@media (prefers-reduced-motion:reduce){.glitch::before,.glitch::after,.node .s.off,.stats div i{animation:none}}
+@media (max-height:700px) and (min-width:981px){.boot{display:none}.stats div b{font-size:28px}}
+</style>
 </head>
 <body>
-<header class="site-header" role="navigation" aria-label="Primary">
-    <a class="skip-link" href="#main">Skip to content</a>
-    <nav class="nav">
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Case Studies</a>
-        <a href="#built">Built</a>
-        <a href="#build-log">Build Log</a>
-        <a href="#contact">Contact</a>
-        <a href="./Solomon_Muratov_Resume.pdf" class="btn btn-primary">Resume</a>
-    </nav>
-</header>
-<div class="animated-bg"></div>
-<div class="bg-overlay"></div>
+<div class="frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+<div class="app">
+ <div class="bar hud"><span><b>&#9654; NET://SOLOMONMURATOV.COM</b></span><span class="r"><span>Connecticut</span><span class="mono" id="clock">--:--:--</span><span class="ok">&#9679; Open to talk</span></span></div>
 
-<!-- Dark Mode Toggle -->
-<button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
-    <span class="theme-icon">🌙</span>
-</button>
+ <header class="hero">
+  <div>
+   <div class="boot mono" id="boot" aria-hidden="true"></div>
+   <h1><span class="a"><span class="glitch" data-t="Solomon">Solomon</span></span> <span class="b">Muratov</span></h1>
+   <p class="role">Senior Engineering Manager <span>&middot;</span> AWS <span>&middot;</span> Distributed systems</p>
+  </div>
+  <div class="stats br" aria-label="Key numbers">
+   <div><b>8+</b><span>Years</span><i></i></div>
+   <div><b>300K+</b><span>Users</span><i></i></div>
+   <div><b>10+</b><span>Team</span><i></i></div>
+   <div><b>15+</b><span>AWS svcs</span><i></i></div>
+  </div>
+ </header>
 
-<!-- Hero Section -->
-<section class="hero">
-    <div class="hero-content">
-        <h1>Solomon Muratov</h1>
-        <p class="hero-tagline">Building distributed systems &amp; leading teams that ship at scale</p>
-        <p class="hero-intro">I'm a Senior Engineering Manager with 8+ years of experience architecting cloud-native
-            systems and mentoring engineers. I'm passionate about developer experience, AWS infrastructure, and building
-            high-performing teams that deliver quality software.</p>
+ <div class="main">
+  <nav class="rail" aria-label="Sections">
+   <div class="tabs" role="tablist" style="display:contents">
+    <button class="tab" role="tab" id="t-hacks" aria-controls="p-hacks" aria-selected="true">Quickhacks <small>1</small></button>
+    <button class="tab" role="tab" id="t-net" aria-controls="p-net" aria-selected="false">The Net <small>2</small></button>
+    <button class="tab" role="tab" id="t-shards" aria-controls="p-shards" aria-selected="false">Shards <small>3</small></button>
+    <button class="tab" role="tab" id="t-path" aria-controls="p-path" aria-selected="false">Life path <small>4</small></button>
+    <button class="tab" role="tab" id="t-fixer" aria-controls="p-fixer" aria-selected="false">Fixer <small>5</small></button>
+   </div>
+   <div class="grow"></div>
+   <div class="quick">
+    <a class="btn f wide" href="https://cal.com/solomon-muratov-iefpdi">Book a call <kbd>B</kbd></a>
+    <a class="btn cy" href="https://github.com/solomon234">GitHub</a>
+    <a class="btn cy" href="https://linkedin.com/in/solomonmuratov">LinkedIn</a>
+    <a class="btn wide" href="/Solomon_Muratov_Resume.pdf">Resume</a>
+   </div>
+  </nav>
 
-        <div class="social-links">
-            <a href="https://github.com/solomon234" target="_blank" class="social-link">
-                <span>💻</span> GitHub
-            </a>
-            <a href="https://linkedin.com/in/solomonmuratov" target="_blank" class="social-link">
-                <span>💼</span> LinkedIn
-            </a>
-            <a href="mailto:solomon@solomonmuratov.com" class="social-link">
-                <span>📧</span> Email
-            </a>
-        </div>
+  <div class="panels">
+   <section class="panel br" id="p-hacks" role="tabpanel" aria-labelledby="t-hacks">
+    <h2>Quickhacks <span>shipped to production</span></h2>
+    <article class="hack"><div class="ram">45<span>% faster</span></div>
+     <div><h3>BizLMS Search Modernization</h3><p>Re-architected search on AWS CloudSearch and Kendra so learners find the right course sooner.</p><p class="st mono">.NET Core / Vue.js / CloudSearch / Kendra / SQS</p></div>
+     <div class="fx"><div><b>&minus;45%</b><span>p95 latency</span></div><div><b>+22%</b><span>task completion</span></div></div></article>
+    <article class="hack"><div class="ram">18<span>% more active</span></div>
+     <div><h3>Personalization with Amazon Personalize</h3><p>Introduced recommendations to lift content engagement across the platform.</p><p class="st mono">Personalize / Lambda / Redshift / Glue</p></div>
+     <div class="fx"><div><b>+18%</b><span>weekly active learners</span></div><div><b>+12%</b><span>session duration</span></div></div></article>
+   </section>
+
+   <section class="panel br" id="p-net" role="tabpanel" aria-labelledby="t-net" hidden>
+    <h2>The Net <span>built on my own time</span></h2>
+    <div class="net">
+     <article class="node"><span class="s on mono">&#9679; online</span><h3>Backsplash AI</h3><p>Generate a custom backdrop for your video calls, with a live webcam preview.</p><p class="st mono">Nuxt 4 / Cloudflare Workers / KV</p><div class="lk"><a class="btn f" href="https://backsplash.solomonmuratov.com/">Try it</a><a class="btn cy" href="https://github.com/solomon234/backsplash-ai">Source</a></div></article>
+     <article class="node"><span class="s on mono">&#9679; open source</span><h3>Ideaverse</h3><p>A second brain on Obsidian: one project per screen, with the next smallest move pulled from your notes.</p><p class="st mono">TypeScript / Obsidian API</p><div class="lk"><a class="btn cy" href="https://github.com/solomon234/ideaverse-home">Source</a></div></article>
+     <article class="node redact"><span class="s off mono">&#9679; restricted &middot; in development</span><h3>Optical POS</h3><p>A point-of-sale system for independent optical shops. <span>Details withheld.</span></p></article>
     </div>
+   </section>
 
-    <div class="scroll-indicator">
-        <div>↓ Scroll to explore</div>
-    </div>
-</section>
+   <section class="panel br" id="p-shards" role="tabpanel" aria-labelledby="t-shards" hidden>
+    <h2>Data shards <span>build log</span></h2>
+    <a class="shard" href="https://github.com/solomon234/ideaverse-home#readme" target="_blank" rel="noopener"><span class="mono">OCT 2026</span><span><h3>A second brain that tells you what to do next</h3><p>Why Ideaverse shows one project at a time.</p></span><span class="hud">&rarr;</span></a>
+    <a class="shard" href="https://github.com/solomon234/backsplash-ai#readme" target="_blank" rel="noopener"><span class="mono">OCT 2026</span><span><h3>Rate-limiting an AI image app on Cloudflare</h3><p>Capping daily generations with Workers KV.</p></span><span class="hud">&rarr;</span></a>
+   </section>
 
-<!-- Main Content -->
-<div class="main-content">
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Impact &amp; Experience</h2>
-            </div>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-value">8+</div>
-                    <div class="stat-label">Years Experience</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">300K+</div>
-                    <div class="stat-label">Users Served</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">10+</div>
-                    <div class="stat-label">Team Size</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-value">15+</div>
-                    <div class="stat-label">AWS Services</div>
-                </div>
-            </div>
-        </div>
-    </section>
+   <section class="panel br" id="p-path" role="tabpanel" aria-labelledby="t-path" hidden>
+    <h2>Life path <span>experience &amp; stack</span></h2>
+    <dl class="life">
+     <dt>2021 - NOW</dt><dd><b>Senior Engineering Manager, BizLibrary</b><span>Developer to lead to manager. SOC2-compliant deployments across 15+ AWS services.</span><em class="perk">Manager of the Year &middot; Feb 2025</em></dd>
+     <dt>2020 - 2021</dt><dd><b>.NET Developer, PetVet Care Centers</b><span>Internal portal and executive reporting.</span></dd>
+     <dt>2019 - 2020</dt><dd><b>.NET Web Developer, The Metro Group</b><span>CRM features and workflow automation.</span><em class="perk">Rookie of the Year &middot; Dec 2019</em></dd>
+     <dt>2018 - 2019</dt><dd><b>IT, Linzer Products</b><span>Legacy systems and administration.</span></dd>
+     <dt>2017</dt><dd><b>B.S. Management Information Systems</b><span>Farmingdale State College</span></dd>
+    </dl>
+    <div class="chips"><span>Lambda</span><span>S3</span><span>API Gateway</span><span>CloudSearch</span><span>Kendra</span><span>Personalize</span><span>Redshift</span><span>SQS</span><span>Glue</span><span>EventBridge</span><span>Cognito</span><span>SAM</span><span>C#</span><span>.NET Core</span><span>TypeScript</span><span>Python</span><span>Vue</span><span>Nuxt</span><span>Node</span><span>SQL Server</span><span>PostgreSQL</span><span>Docker</span></div>
+   </section>
 
-    <!-- Experience Timeline -->
-    <section class="section" id="experience">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Professional Journey</h2>
-                <p class="section-subtitle">From developer to manager, building scalable systems and leading
-                    high-performing teams</p>
-            </div>
+   <section class="panel br fixer" id="p-fixer" role="tabpanel" aria-labelledby="t-fixer" hidden>
+    <h2>Open channel <span>contact</span></h2>
+    <p class="hud" style="color:var(--r)">Incoming &middot; a role, a project, or a hard scaling problem</p>
+    <a class="mail" href="mailto:me@solomonmuratov.com">me@<wbr>solomonmuratov.com</a>
+    <div class="row"><a class="btn f" href="https://cal.com/solomon-muratov-iefpdi">Book a call</a><a class="btn cy" href="https://github.com/solomon234">GitHub</a><a class="btn cy" href="https://linkedin.com/in/solomonmuratov">LinkedIn</a><a class="btn" href="/Solomon_Muratov_Resume.pdf">Resume</a></div>
+   </section>
+  </div>
+ </div>
 
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card">
-                        <div class="period-badge">2021 - Present</div>
-                        <h3 class="company-title">Senior Engineering Manager at BizLibrary</h3>
-                        <p class="job-description">Leading development of BizLMS, a cloud-hosted SaaS learning platform
-                            serving 300,000+ users. Advanced from Software Developer → Lead Developer → Development
-                            Manager → Senior Engineering Manager.</p>
-                        <ul class="highlights">
-                            <li>Architect distributed systems using .NET Core, Vue.js, and serverless Lambda functions
-                                (Node.js/Python)
-                            </li>
-                            <li>Implement SOC2-compliant deployment processes leveraging 15+ AWS services (CloudSearch,
-                                S3, Redshift, SQS, API Gateway, Kendra, Personalize, Glue)
-                            </li>
-                            <li>Establish comprehensive team development programs with standardized 1:1s, peer reviews,
-                                and mentorship
-                            </li>
-                            <li>Build stakeholder relationships aligning technical delivery with business objectives
-                            </li>
-                        </ul>
-                        <div class="awards">
-                            <div class="award">🏆 Manager of the Year (February 2025)</div>
-                            <div class="award">⭐ Passion to Be the Best (February 2023)</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card">
-                        <div class="period-badge">2020 - 2021</div>
-                        <h3 class="company-title">.NET Developer at PetVet Care Centers</h3>
-                        <p class="job-description">Led development of internal business portal and executive reporting
-                            systems.</p>
-                        <ul class="highlights">
-                            <li>Built scalable web applications using ASP.NET, AngularJS, and SQL Server</li>
-                            <li>Optimized database performance for complex reporting requirements</li>
-                            <li>Delivered executive-level dashboards and analytics</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card">
-                        <div class="period-badge">2019 - 2020</div>
-                        <h3 class="company-title">.NET Web Developer at The Metro Group Inc.</h3>
-                        <p class="job-description">Enhanced CRM systems and implemented automated workflows for
-                            operational efficiency.</p>
-                        <ul class="highlights">
-                            <li>Developed features using C# ASP.NET MVC and AngularJS</li>
-                            <li>Implemented automated workflows reducing manual processes</li>
-                            <li>Led performance optimization initiatives across web apps and SSRS reporting</li>
-                        </ul>
-                        <div class="awards">
-                            <div class="award">🌟 Rookie of the Year (December 2019)</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card">
-                        <div class="period-badge">2018 - 2019</div>
-                        <h3 class="company-title">IT / Computer Programming at Linzer Products Corp.</h3>
-                        <p class="job-description">Maintained legacy systems and provided IT administration support.</p>
-                        <ul class="highlights">
-                            <li>Programming with BASIC on legacy NoSQL database</li>
-                            <li>IT administration including Active Directory management</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card">
-                        <div class="period-badge">2014 - 2017</div>
-                        <h3 class="company-title">Education</h3>
-                        <ul class="highlights">
-                            <li><strong>Farmingdale State College:</strong> Bachelor's in Management Information Systems
-                                (Programming) - December 2017
-                            </li>
-                            <li><strong>Nassau Community College:</strong> Associates of Arts and Sciences (Math &amp;
-                                Science) - December 2014
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="section" id="skills">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Tech Stack</h2>
-                <p class="section-subtitle">Technologies, frameworks, and tools I use to build scalable systems</p>
-            </div>
-
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3 class="skill-category-title">Languages</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">C#</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">TypeScript</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">PowerShell</span>
-                        <span class="skill-tag">Bash</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3 class="skill-category-title">Frameworks</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">.NET Core</span>
-                        <span class="skill-tag">Vue.js</span>
-                        <span class="skill-tag">Nuxt.js</span>
-                        <span class="skill-tag">Angular</span>
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">Express</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3 class="skill-category-title">Cloud &amp; AWS</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">AWS Lambda</span>
-                        <span class="skill-tag">S3</span>
-                        <span class="skill-tag">API Gateway</span>
-                        <span class="skill-tag">CloudSearch</span>
-                        <span class="skill-tag">Redshift</span>
-                        <span class="skill-tag">SQS</span>
-                        <span class="skill-tag">Kendra</span>
-                        <span class="skill-tag">Personalize</span>
-                        <span class="skill-tag">Glue</span>
-                        <span class="skill-tag">EventBridge</span>
-                        <span class="skill-tag">Cognito</span>
-                        <span class="skill-tag">SAM/IaC</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3 class="skill-category-title">Databases</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">SQL Server</span>
-                        <span class="skill-tag">PostgreSQL</span>
-                        <span class="skill-tag">NoSQL</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3 class="skill-category-title">DevOps</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">CI/CD</span>
-                        <span class="skill-tag">SOC2 Compliance</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3 class="skill-category-title">Leadership</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Team Development</span>
-                        <span class="skill-tag">Mentorship</span>
-                        <span class="skill-tag">Stakeholder Management</span>
-                        <span class="skill-tag">Process Improvement</span>
-                        <span class="skill-tag">Agile/Waterfall</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--    Projects-->
-    <section class="section" id="projects">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Selected Case Studies</h2>
-                <p class="section-subtitle">Impact-focused snapshots from leading BizLMS and related platforms</p>
-            </div>
-            <div class="skills-grid">
-                <article class="skill-category">
-                    <h3 class="skill-category-title">BizLMS Search Modernization</h3>
-                    <p class="job-description">Re-architected search using AWS CloudSearch and Kendra, improving
-                        relevance and cutting average query latency.</p>
-                    <ul class="highlights">
-                        <li>Role: SDM / Architect</li>
-                        <li>Stack: .NET Core, Vue.js, AWS CloudSearch, Kendra, SQS</li>
-                        <li>Impact: −45% p95 latency, +22% task completion rate, 300K+ users</li>
-                    </ul>
-                </article>
-                <article class="skill-category">
-                    <h3 class="skill-category-title">Personalization with Amazon Personalize</h3>
-                    <p class="job-description">Introduced recommendations to increase content engagement.</p>
-                    <ul class="highlights">
-                        <li>Role: Product/Tech Lead</li>
-                        <li>Stack: AWS Personalize, Lambda, Redshift, Glue</li>
-                        <li>Impact: +18% weekly active learners, +12% session duration</li>
-                    </ul>
-                </article>
-            </div>
-        </div>
-    </section>
-    
-    <!--    Things I've built-->
-    <section class="section" id="built">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Things I've Built</h2>
-                <p class="section-subtitle">Side projects you can try or read, shipped on my own time</p>
-            </div>
-            <div class="skills-grid">
-                <article class="skill-category">
-                    <h3 class="skill-category-title">Backsplash AI</h3>
-                    <p class="job-description">Generate a custom backsplash image for your work video calls.</p>
-                    <ul class="highlights">
-                        <li>Stack: Nuxt 4, Cloudflare Workers, KV</li>
-                        <li>Daily generation limit enforced at the edge</li>
-                    </ul>
-                    <div class="social-links">
-                        <a href="https://backsplash.solomonmuratov.com/" target="_blank" rel="noopener" class="social-link">Try it</a>
-                        <a href="https://github.com/solomon234/backsplash-ai" target="_blank" rel="noopener" class="social-link">Source</a>
-                    </div>
-                </article>
-                <article class="skill-category">
-                    <h3 class="skill-category-title">Ideaverse</h3>
-                    <p class="job-description">A second brain built on Obsidian: one project per screen, with the next smallest move pulled from your own notes.</p>
-                    <ul class="highlights">
-                        <li>Stack: TypeScript, Obsidian API</li>
-                        <li>Local only: no network calls</li>
-                    </ul>
-                    <div class="social-links">
-                        <a href="https://github.com/solomon234/ideaverse-home" target="_blank" rel="noopener" class="social-link">Source</a>
-                    </div>
-                </article>
-                <article class="skill-category">
-                    <h3 class="skill-category-title">Optical POS</h3>
-                    <p class="job-description">A point-of-sale system for independent optical shops.</p>
-                    <ul class="highlights">
-                        <li>Status: in development</li>
-                    </ul>
-                </article>
-            </div>
-        </div>
-    </section>
-    <!--    Build log-->
-    <section class="section" id="build-log">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Build Log</h2>
-                <p class="section-subtitle">Short notes on what I'm making and what I learned</p>
-            </div>
-            <div class="skills-grid">
-                <article class="skill-category">
-                    <h3 class="skill-category-title">Oct 2026: A second brain that tells you what to do next</h3>
-                    <p class="job-description">Why Ideaverse shows one project at a time, and how it picks the next move from the first unchecked item in your notes.</p>
-                    <div class="social-links">
-                        <a href="https://github.com/solomon234/ideaverse-home#readme" target="_blank" rel="noopener" class="social-link">Read more</a>
-                    </div>
-                </article>
-                <article class="skill-category">
-                    <h3 class="skill-category-title">Oct 2026: Rate-limiting an AI image app on Cloudflare</h3>
-                    <p class="job-description">Capping daily generations with Workers KV so a public demo can't run up a bill.</p>
-                    <div class="social-links">
-                        <a href="https://github.com/solomon234/backsplash-ai#readme" target="_blank" rel="noopener" class="social-link">Read more</a>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-<!--    Contact-->
-    <section class="section" id="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Let’s work together</h2>
-                <p class="section-subtitle">Have a role or project in mind? I’m happy to chat.</p>
-            </div>
-            <div class="social-links" role="group" aria-label="Contact options">
-                <a href="mailto:solomon@solomonmuratov.com" class="social-link"
-                   aria-label="Email Solomon"><span>📧</span>Email Me</a>
-                <a href="https://cal.com/solomon-muratov-iefpdi" target="_blank" rel="noopener" class="social-link"
-                   aria-label="Book an intro call"><span>📅</span>Book a Call</a>
-                <a href="/Solomon_Muratov_Resume.pdf" class="social-link" aria-label="Download resume"><span>📄</span>Resume</a>
-            </div>
-        </div>
-    </section>
+ <footer class="hud"><span>&copy; 2026 Solomon Muratov</span><span>Keys 1-5 switch tabs &middot; B books a call</span></footer>
 </div>
-
-<!-- Footer -->
-<footer class="footer">
-    <div class="container">
-        <div class="footer-content">
-            <p>Based in Connecticut 🏡 • Built with vanilla HTML, CSS, and JavaScript</p>
-            <p>© 2026 Solomon Muratov. Crafted with passion for clean, efficient code.</p>
-        </div>
-    </div>
-</footer>
-
+<noscript><style>.panel[hidden]{display:block!important}.app{height:auto}.panel{margin-bottom:12px}</style></noscript>
 <script>
-    (function () {
-        try {
-            var t = localStorage.getItem('theme-preference');
-            if (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) t = 'dark';
-            if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
-        } catch {
-        }
-    })();
-
-    const THEME_KEY = 'theme-preference';
-
-    function getSystemTheme() {
-        return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
-
-    function applyTheme(theme) {
-        const html = document.documentElement;
-        const icon = document.querySelector('.theme-icon');
-        if (theme === 'dark') {
-            html.setAttribute('data-theme', 'dark');
-            if (icon) icon.textContent = '☀️';
-        } else {
-            html.removeAttribute('data-theme');
-            if (icon) icon.textContent = '🌙';
-        }
-    }
-
-    function saveTheme(theme) {
-        try {
-            localStorage.setItem(THEME_KEY, theme);
-        } catch {
-        }
-    }
-
-    function loadTheme() {
-        try {
-            const stored = localStorage.getItem(THEME_KEY);
-            applyTheme(stored || getSystemTheme());
-        } catch {
-            applyTheme(getSystemTheme());
-        }
-    }
-
-    function toggleTheme() {
-        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-        const next = isDark ? 'light' : 'dark';
-        applyTheme(next);
-        saveTheme(next);
-    }
-
-    document.addEventListener('DOMContentLoaded', loadTheme);
-
-    // Scroll Animations
-    function animateOnScroll() {
-        const sections = document.querySelectorAll('.section');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        });
-
-        sections.forEach(section => {
-            observer.observe(section);
-        });
-    }
-
-    // Smooth scroll for internal links
-    function setupSmoothScroll() {
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    }
-
-    // Initialize
-    document.addEventListener('DOMContentLoaded', function () {
-        loadTheme();
-        animateOnScroll();
-        setupSmoothScroll();
-
-        // Add stagger animation to timeline items
-        const timelineItems = document.querySelectorAll('.timeline-item');
-        timelineItems.forEach((item, index) => {
-            item.style.animationDelay = `${index * 0.2}s`;
-        });
-    });
-
-    // Parallax effect for background
-    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        // disable parallax
-    } else {
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const parallax = document.querySelector('.animated-bg');
-            if (parallax) {
-                parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
-            }
-        });
-    }
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const lines=['<b>&gt;</b> whoami','<b>&gt;</b> solomon_muratov --role senior_engineering_manager','<b>&gt;</b> link established <span class="okk">[ OK ]</span>'];
+const boot=document.getElementById('boot');
+if(reduce){boot.innerHTML=lines.join('<br>')}else{let i=0;(function nx(){if(i<lines.length){boot.innerHTML+=(i?'<br>':'')+lines[i++];setTimeout(nx,380)}})()}
+const c=document.getElementById('clock');const tick=()=>{c.textContent='LOCAL '+new Date().toLocaleTimeString('en-GB')};tick();setInterval(tick,1000);
+const tabs=[...document.querySelectorAll('.tab')];
+function show(id,focus){tabs.forEach(t=>{const on=t.id===id;t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;const p=document.getElementById(t.getAttribute('aria-controls'));p.hidden=!on;if(on)p.scrollTop=0;if(on&&focus)t.focus()});try{history.replaceState(null,'','#'+id.slice(2))}catch(e){}}
+tabs.forEach((t,i)=>{t.addEventListener('click',()=>show(t.id));t.addEventListener('keydown',e=>{const k={ArrowDown:1,ArrowRight:1,ArrowUp:-1,ArrowLeft:-1}[e.key];if(k){e.preventDefault();show(tabs[(i+k+tabs.length)%tabs.length].id,true)}})});
+addEventListener('keydown',e=>{if(e.metaKey||e.ctrlKey||e.altKey||/input|textarea/i.test(e.target.tagName))return;const n=parseInt(e.key,10);if(n>=1&&n<=tabs.length)show(tabs[n-1].id);if(e.key==='b'||e.key==='B')location.href='https://cal.com/solomon-muratov-iefpdi'});
+const h=location.hash.slice(1);show(tabs.some(t=>t.id==='t-'+h)?'t-'+h:'t-hacks');
 </script>
 </body>
 </html>
